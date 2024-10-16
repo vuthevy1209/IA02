@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA02 - Vũ Thế Vỹ - 22120451</title>
+    <script src="assets/js/scripts.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bé Tập Tính</h2>
+        <label for="num1">Số Thứ Nhất</label>
+        <input type="text" id="num1">
+
+        <label for="num2">Số Thứ Hai</label>
+        <input type="text" id="num2">
+
+        <label>Phép toán</label>
+        <div class="radio-group">
+            <label><input type="radio" name="operation" id="add" value="add">+</label>
+            <label><input type="radio" name="operation" id="subtract" value="subtract">-</label>
+            <label><input type="radio" name="operation" id="multiply" value="multiply">x</label>
+            <label><input type="radio" name="operation" id="divide" value="divide">/</label>
+        </div>
+
+        <label for="result">Kết quả</label>
+        <input type="text" id="result" readonly>
+
+        <button onclick="calculate()">Tính</button>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="error-modal">
+        <h4>Lỗi !</h4>
+        <p id="errorMessage">An error occurred</p>
+        <button onclick="closeModal()">Đóng</button>
+    </div>
+
+</body>
+
+</html>
