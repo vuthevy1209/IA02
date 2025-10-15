@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   output: "export",
+  basePath: process.env.NODE_ENV === "production" ? "/IA02" : undefined,
+  trailingSlash: true,
 };
 
 export default nextConfig;
