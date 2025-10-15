@@ -13,7 +13,9 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com", // occasionally used in examples
       },
     ],
+    unoptimized: true,
   },
+  output: "export",
 };
 
 export default nextConfig;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { fetchPhotoById } from "@/lib/picsum";
+import { fetchPhotoById, fetchPhotos } from "@/lib/picsum";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -42,5 +42,13 @@ export default async function PhotoDetailPage({ params }: PageProps) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const firstPage = await fetchPhotos(1, 50);
+  return firstPage.map(p => ({ id: String(p.id) }));
+}
+
+export const revalidate = 86400; // 24h
+export const dynamic = "force-static";
 
 
